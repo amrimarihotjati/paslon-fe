@@ -1,0 +1,25 @@
+{
+    "paslon":[
+        {
+            "id": 1,
+            "name": "Guswandi",
+            "visi": "Kita akan keSurga bareng-bareng",
+            "parties": "PDIP",
+            "image": "https://www.pinterpolitik.com/wp-content/uploads/2023/02/megawati-foto-artikel.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Prabowo",
+            "visi": "Ganyang Korupsi",
+            "parties": "Gerindra",
+            "image": "https://awsimages.detik.net.id/community/media/visual/2019/02/17/70061688-fbbe-4def-b03d-7bb02c8264b0_169.jpeg?w=600&q=90"
+        },
+        {
+            "id": 3,
+            "name": "Genjer",
+            "visi": "Batalkan semua pertandingan sepak bola!",
+            "parties": "PDIP",
+            "image": "https://cms.disway.id/uploads/bdc94d786695307cba5aa61ca4ce9b64.jpg"
+        }
+    ]
+}
