@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Navbar from '../components/Navbar';
+import Header from '../components/Header';
 import {
     Box,
     Heading,
     Image,
     Divider,
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
     FormControl,
     FormLabel,
     Input,
@@ -130,40 +129,13 @@ export default function Paslon() {
 
     return (
         <Box bg={'indigo'} maxWidth='full' display='flex' flexDirection='column' alignItems={'center'} flexWrap={'wrap'}>
-            <Box display={'flex'} gap={'20px'} flexWrap={'wrap'} my={'20px'}>
-                <Heading color='white'>PEMILU</Heading>
-                <Image w='50px' h={'50px'} src='https://jombang.bawaslu.go.id/wp-content/uploads/2019/04/Logo-Bawaslu-2018-Icon-PNG-HD.png'></Image>
-            </Box>
+            {/* Import Komponen Header */}
+            <Header/>
+            {/* Import Komponen Header */}
             <Divider />
-            <Box background={'purple.900'} w={'full'} display={'flex'} justifyContent={'center'} flexWrap={'wrap'} p={'20px'}>
-                <Breadcrumb separator={'-'} color={'white'} fontWeight={'bold'}>
-                    <BreadcrumbItem>
-                        <BreadcrumbLink href='/'>
-                            Perolehan Suara
-                        </BreadcrumbLink>
-                    </BreadcrumbItem>
-                    <BreadcrumbItem>
-                        <BreadcrumbLink href='/'>
-                            Vote
-                        </BreadcrumbLink>
-                    </BreadcrumbItem>
-                    <BreadcrumbItem>
-                        <BreadcrumbLink href='paslon'>
-                            Paslon
-                        </BreadcrumbLink>
-                    </BreadcrumbItem>
-                    <BreadcrumbItem>
-                        <BreadcrumbLink href='partai'>
-                            Partai
-                        </BreadcrumbLink>
-                    </BreadcrumbItem>
-                    <BreadcrumbItem>
-                        <BreadcrumbLink href='kontak'>
-                            Kontak
-                        </BreadcrumbLink>
-                    </BreadcrumbItem>
-                </Breadcrumb>
-            </Box>
+            {/* Import Komponen Navbar */}
+            <Navbar/>
+            {/* Import Komponen Navbar */}
             {candidates.map((candidate) =>(
                 <Box display={'flex'} background='purple.800' w='full' justifyContent={'center'} p={'20px'}>
                     <Card direction={{base: 'column', sm: 'row'}} overflow='hidden' variant='outline' bgGradient='linear(to-l, #2442b1, #141547)'>

@@ -25,6 +25,8 @@ import {
     BreadcrumbLink,
     SimpleGrid,
 } from '@chakra-ui/react';
+import Header from '../components/Header';
+import Login from '../components/Login';
 
 interface Candidate {
     id: number;
@@ -163,10 +165,9 @@ export default function Home() {
 
   return (
     <Box bg={'indigo'} maxWidth='full' display='flex' flexDirection='column' alignItems={'center'} flexWrap={'wrap'}>
-        <Box display={'flex'} gap={'20px'} flexWrap={'wrap'} my={'20px'}>
-            <Heading color='white'>PEMILU</Heading>
-            <Image w='50px' h={'50px'} src='https://jombang.bawaslu.go.id/wp-content/uploads/2019/04/Logo-Bawaslu-2018-Icon-PNG-HD.png'></Image>
-        </Box>
+        {/* Import Komponen Header */}
+        <Header/>
+        {/* Import Komponen Header */}
         <Divider />
         <Box background={'purple.900'} w={'full'} display={'flex'} justifyContent={'center'} flexWrap={'wrap'} p={'20px'}>
             <Breadcrumb separator={'-'} color={'white'} fontWeight={'bold'}>
@@ -195,6 +196,9 @@ export default function Home() {
                         Kontak
                     </BreadcrumbLink>
                 </BreadcrumbItem>
+                <BreadcrumbItem>
+                    <Login/>
+                 </BreadcrumbItem>
             </Breadcrumb>
         </Box>
         <Box className='paslon-box' ref={paslonBoxRef}  backgroundImage={'https://media.npr.org/assets/img/2020/10/21/20-10-22-throughlinevoting_01_wide-90c68824497a58b2aab0188fdd9027e5cf33bfa6-s1300-c85.webp'} backgroundSize={'cover'} w={'full'} h={'full'} alignItems={'center'} flexDirection={'column'} display={'flex'}  flexWrap={'wrap'}>

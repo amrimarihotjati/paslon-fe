@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Paslon from './pages/Paslon';
 import Partai from './pages/Partai';
 import Kontak from './pages/Kontak';
+import SignUp from './pages/SignUp';
 
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
             <Route path='paslon' element={<Paslon />} />
             <Route path='partai' element={<Partai />} />
             <Route path='kontak' element={<Kontak />} />
+            <Route path='signup' element={<SignUp />} />
           </Route>
         </Routes>
       </BrowserRouter>
