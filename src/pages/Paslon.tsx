@@ -162,8 +162,8 @@ export default function Paslon() {
                 </Box>
             ))}
             <Divider/>
-            <Box display={'flex'} gap={'50px'} my={'50px'}>
-                <Box>
+            <Box display={'flex'} gap={'50px'} my={'50px'} >
+                <Box w={'350px'}>
                     <Heading color='white' marginBottom={'30px'}>TAMBAH PASLON</Heading>
                     <FormControl marginBottom={'30px'}>
                         <FormLabel color={'white'}>Nama Paslon</FormLabel>
@@ -174,9 +174,9 @@ export default function Paslon() {
                         <Textarea placeholder='Tuliskan Visi Misi' background={'white'} value={visi} onChange={(e) => setVisi(e.target.value)}>
                         </Textarea>
                     </FormControl>
-                    <FormControl marginBottom={'30px'}>
+                    <FormControl marginBottom={'30px'} >
                         <FormLabel color={'white'}>Partai Pengusung</FormLabel>
-                        <Box display={'flex'} gap={'10px'}>
+                        <Box display={'flex'} gap={'10px'} flexWrap={'wrap'}>
                             {parties?.map((partie)=> (
                                 <Checkbox color={'white'}   key={partie.id} onChange={() => handleCheckboxChange(partie.id)}
                                 isChecked={selectedParties.includes(partie.id)}>{partie.name}</Checkbox>

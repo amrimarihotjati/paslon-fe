@@ -88,13 +88,15 @@ export default function UsersButton() {
                     </Box>
 
                 </Stack>
+                <Box my={'15px'} justifyContent={'end'} display={'flex'}>
+                    <Button colorScheme='orange'>Update</Button>
+                </Box>
                 </DrawerBody>
 
                 <DrawerFooter borderTopWidth='1px'>
-                <Button variant='outline' colorScheme='white' mr={3} onClick={onClose}>
-                    Cancel
+                <Button  colorScheme='red' onClick={onClose}>
+                    Log Out
                 </Button>
-                <Button colorScheme='orange'>Submit</Button>
                 </DrawerFooter>
             </DrawerContent>
         </Drawer>

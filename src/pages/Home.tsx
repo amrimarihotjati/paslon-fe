@@ -20,13 +20,10 @@ import {
     Radio,
     Divider,
     Tag,
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
     SimpleGrid,
 } from '@chakra-ui/react';
 import Header from '../components/Header';
-import Login from '../components/Login';
+import Navbar from '../components/Navbar';
 
 interface Candidate {
     id: number;
@@ -150,62 +147,18 @@ export default function Home() {
           .catch((error) => console.error('Error Fetching Data', error));
     }, [candidates,votes, voteCounts, voterName, selectedPaslon]);
 
-    const scrollToPaslonBox = () => {
-        if (paslonBoxRef.current) {
-          paslonBoxRef.current.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
-    // Function to handle scrolling to the vote section
-    const scrollToVoteSection = () => {
-        if (voteSectionRef.current) {
-        voteSectionRef.current.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
   return (
     <Box bg={'indigo'} maxWidth='full' display='flex' flexDirection='column' alignItems={'center'} flexWrap={'wrap'}>
         {/* Import Komponen Header */}
         <Header/>
         {/* Import Komponen Header */}
         <Divider />
-        <Box background={'purple.900'} w={'full'} display={'flex'} justifyContent={'center'} flexWrap={'wrap'} p={'20px'}>
-            <Breadcrumb separator={'-'} color={'white'} fontWeight={'bold'}>
-                <BreadcrumbItem>
-                    <BreadcrumbLink onClick={scrollToPaslonBox}>
-                        Perolehan Suara
-                    </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbItem>
-                    <BreadcrumbLink onClick={scrollToVoteSection}>
-                        Vote
-                    </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbItem>
-                    <BreadcrumbLink href='paslon'>
-                        Paslon
-                    </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbItem>
-                    <BreadcrumbLink href='partai'>
-                        Partai
-                    </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbItem>
-                    <BreadcrumbLink href='kontak'>
-                        Kontak
-                    </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbItem>
-                    <Login/>
-                 </BreadcrumbItem>
-            </Breadcrumb>
-        </Box>
+        <Navbar/>
         <Box className='paslon-box' ref={paslonBoxRef}  backgroundImage={'https://media.npr.org/assets/img/2020/10/21/20-10-22-throughlinevoting_01_wide-90c68824497a58b2aab0188fdd9027e5cf33bfa6-s1300-c85.webp'} backgroundSize={'cover'} w={'full'} h={'full'} alignItems={'center'} flexDirection={'column'} display={'flex'}  flexWrap={'wrap'}>
-            <Box p='20px' display={'flex'} flexDirection={'column'} alignItems={'center'}>
+            <Box m={'20px'}>
                 <Grid templateColumns={'repeat(4, 1fr)'} gap={6} alignItems={'center'}>
                     {candidates.map((candidate) => (
-                        <GridItem key={candidate.id} w='100%' h='100%' colSpan={{base:3, sm: 2, md: 2, lg:1}}>
+                        <GridItem key={candidate.id} w='100%' h='100%' colSpan={{base:8, sm: 2, md: 2, lg:1}}>
                             <Card maxWidth='sm' borderRadius={'10px'} bgGradient='linear(to-l, #2442b1, #141547)'>
                                 <CardBody>
                                     <Image src='https://www.pinterpolitik.com/wp-content/uploads/2023/02/megawati-foto-artikel.jpg' borderRadius={'10px'} objectFit={'cover'} height={'200px'}/>
@@ -260,7 +213,7 @@ export default function Home() {
                     <Image src='https://harmonyvotes.org.au/wp-content/uploads/2022/02/Home.png' />
                 </Box>
                 <Box>
-                    <FormControl>
+                    <FormControl w={'350px'}>
                         <FormLabel color={'white'} my='10px'>Masukan Nama</FormLabel>
                         <Input required placeholder='Masukkan Nama Anda' background={'white'} my='10px' id='nama-voter' value={voterName} onChange={(e) => setVoterName(e.target.value)}></Input>
                         <Text color={'white'} my='10px'>
@@ -273,7 +226,7 @@ export default function Home() {
                                 ))}
                             </Stack>
                         </RadioGroup>
-                        <Box my={'20px'} display={'flex'} justifyContent={'end'}>
+                        <Box my={'20px'} display={'flex'} justifyContent={'center'}>
                             <Button width={'40%'} onClick={handleVote}>Vote</Button>
                         </Box>
                     </FormControl>

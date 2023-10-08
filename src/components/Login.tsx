@@ -15,21 +15,29 @@ import {
     Input
 } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom';
-
+import { useLoginContext } from '../hooks/LoginContext';
 
 
 export default function Login() {
 
-    const OverlayOne = () => (
-        <ModalOverlay
-          backdropFilter='blur(10px)'
-        />
-    )
-    
-    const { isOpen, onOpen, onClose } = useDisclosure()
-    const [overlay, setOverlay] = React.useState(<OverlayOne />)
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { login } = useLoginContext();
+
+  const handleLogin = () => {
+    login();
+    onClose();
+  };
+
+  const OverlayOne = () => (
+      <ModalOverlay
+        backdropFilter='blur(10px)'
+      />
+  )
+
+  const [overlay, setOverlay] = React.useState(<OverlayOne />)
+
 
   return (
     <>
@@ -55,9 +63,9 @@ export default function Login() {
             </FormControl>
             <FormControl>
                 <FormLabel>Password</FormLabel>
-                <Input background={'white'} placeholder='Your Passowrd' type='password' color={'black'} ></Input>
+                <Input background={'white'} placeholder='Your Passowrd' type='password' color={'black'}></Input>
             </FormControl>
-            <Button colorScheme='green' onClick={onClose}>Login</Button>
+            <Button colorScheme='green' onClick={handleLogin}>Login</Button>
           </ModalBody>
           <ModalFooter gap={'10px'}>
             <Text>Belum punya akun? silahkan</Text>

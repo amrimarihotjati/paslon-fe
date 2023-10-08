@@ -87,7 +87,7 @@ export default function Partai() {
         </Box>
         <Divider/>
         <Box display={'flex'} gap={'50px'} my={'50px'} flexWrap={'wrap'}>
-            <Box>
+            <Box w={'350px'}>
                 <Heading color='white' marginBottom={'30px'}>TAMBAH PARTAI</Heading>
                 <FormControl marginBottom={'30px'}>
                     <FormLabel color={'white'}>Nama Partai</FormLabel>
